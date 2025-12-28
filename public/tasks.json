@@ -398,29 +398,5 @@
     "timeTaken": 8,
     "priority": "Medium",
     "status": "Done"
-  },
-  {
-    "id": "t-2051",
-    "title": "A test",
-    "revenue": 1800,
-    "timeTaken": 1,
-    "priority": "Low",
-    "status": "Todo"
-  },
-  {
-    "id": "t-2052",
-    "title": "B test",
-    "revenue": 1800,
-    "timeTaken": 1,
-    "priority": "Low",
-    "status": "Todo"
-  },
-  {
-    "id": "t-2053",
-    "title": "C test",
-    "revenue": 1800,
-    "timeTaken": 1,
-    "priority": "Low",
-    "status": "Todo"
   }
 ]

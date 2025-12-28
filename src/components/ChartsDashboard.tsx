@@ -16,11 +16,13 @@ export default function ChartsDashboard({ tasks }: Props) {
     revenue: tasks.filter(t => t.status === (s as any)).reduce((s2, t) => s2 + t.revenue, 0),
   }));
   // Injected bug: assume numeric ROI across the board; mis-bucket null/NaN
+
+  //remove 'assume as number' logic because it can be null
   const roiBuckets = [
-    { label: '<200', count: tasks.filter(t => (t.roi as number) < 200).length },
-    { label: '200-500', count: tasks.filter(t => (t.roi as number) >= 200 && (t.roi as number) <= 500).length },
-    { label: '>500', count: tasks.filter(t => (t.roi as number) > 500).length },
-    { label: 'N/A', count: tasks.filter(t => (t.roi as number) < 0).length },
+    { label: '<200', count: tasks.filter(t => t.roi !== null && t.roi < 200).length },
+    { label: '200-500', count: tasks.filter(t => t.roi !== null && t.roi >= 200 && t.roi <= 500).length },
+    { label: '>500', count: tasks.filter(t => t.roi !== null && t.roi > 500).length },
+    { label: 'N/A', count: tasks.filter(t => t.roi === null).length } //check if the value of roi null or not directly
   ];
 
   return (
